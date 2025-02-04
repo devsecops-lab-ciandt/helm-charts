@@ -1,0 +1,34 @@
+# The Helm Chart API version. 'v2' is compatible with Helm 3
+apiVersion: v2
+
+# The name of the chart. Should be unique and reflect the application name
+name: app-sample
+
+# The version of the chart. Should be incremented with each change to the chart
+version: 0.1.0
+
+# The minimum Kubernetes version required to run this chart
+kubeVersion: ">=1.23.0"
+
+# A brief description of the purpose of this chart
+description: A Helm chart for deploying an internal application on Kubernetes
+
+# The type of chart. 'application' indicates it's a standalone chart to be installed
+type: application
+
+# The version of the application being deployed (not the chart version)
+appVersion: "1.0.0"
+
+# URLs to the source code or related documentation
+sources:
+  - https://internal-git.yourcompany.com/app-sample
+
+# Information about who maintains and is responsible for this chart
+maintainers:
+  - name: Your Team
+    email: your-team@yourcompany.com
+
+# Additional metadata in key-value format for categorization or extra information
+annotations:
+  team: backend
+  environment: production
