@@ -32,3 +32,5 @@ maintainers:
 annotations:
   team: backend
   environment: production
+
+icon: https://raw.githubusercontent.com/devsecops-lab-ciandt/helm-charts/main/.assets/app-sample-node.png
