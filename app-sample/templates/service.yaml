@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}
   labels:
-    {{ .Chart.Name }}
+    app.kubernetes.io/name: {{ .Chart.Name }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{ .Chart.Name }}
+    app.kubernetes.io/name: {{ .Chart.Name }}

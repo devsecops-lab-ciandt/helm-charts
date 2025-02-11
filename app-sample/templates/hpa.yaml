@@ -4,7 +4,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: {{ .Release.Name }}
   labels:
-    {{ .Chart.Name }}
+    app.kubernetes.io/name: {{ .Chart.Name }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

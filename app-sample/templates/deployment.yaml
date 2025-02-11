@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}
   labels:
-    {{ .Chart.Name }}
+    app.kubernetes.io/name: {{ .Chart.Name }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{ .Chart.Name }}
+      app.kubernetes.io/name: {{ .Chart.Name }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{ .Chart.Name }}
+        app.kubernetes.io/name: {{ .Chart.Name }}
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
