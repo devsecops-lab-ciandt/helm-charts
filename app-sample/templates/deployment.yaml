@@ -18,6 +18,9 @@ spec:
       maxUnavailable: {{ .Values.deployStrategy.maxUnavailable }}
       maxSurge: {{ .Values.deployStrategy.maxSurge }}
   {{- end }}
+  {{- if .Values.revisionHistoryLimit }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  {{- end }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
