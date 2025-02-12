@@ -11,6 +11,13 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ .Chart.Name }}
+  {{- if .Values.deployStrategy }}
+  strategy:
+    type: {{ .Values.deployStrategy.type }}
+    rollingUpdate: 
+      maxUnavailable: {{ .Values.deployStrategy.maxUnavailable }}
+      maxSurge: {{ .Values.deployStrategy.maxSurge }}
+  {{- end }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
