@@ -5,7 +5,7 @@ apiVersion: v2
 name: app-sample
 
 # The version of the chart. Should be incremented with each change to the chart
-version: 0.1.0
+version: VERSION_APP
 
 # The minimum Kubernetes version required to run this chart
 kubeVersion: ">=1.23.0"
@@ -17,7 +17,7 @@ description: A Helm chart for deploying an internal application on Kubernetes
 type: application
 
 # The version of the application being deployed (not the chart version)
-appVersion: "1.0.0"
+appVersion: "VERSION_APP"
 
 # URLs to the source code or related documentation
 sources:
