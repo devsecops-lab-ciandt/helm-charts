@@ -2,7 +2,7 @@
 apiVersion: v2
 
 # The name of the chart. Should be unique and reflect the application name
-name: app-sample
+name: NAME_APP
 
 # The version of the chart. Should be incremented with each change to the chart
 version: VERSION_APP
@@ -21,7 +21,7 @@ appVersion: "VERSION_APP"
 
 # URLs to the source code or related documentation
 sources:
-  - https://internal-git.yourcompany.com/app-sample
+  - https://github.com/devsecops-lab-ciandt/NAME_APP
 
 # Information about who maintains and is responsible for this chart
 maintainers:
@@ -33,4 +33,4 @@ annotations:
   team: backend
   environment: production
 
-icon: https://raw.githubusercontent.com/devsecops-lab-ciandt/helm-charts/main/.assets/app-sample-node.png
+icon: https://raw.githubusercontent.com/devsecops-lab-ciandt/helm-charts/main/.assets/NAME_APP-node.png

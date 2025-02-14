@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "app-sample.fullname" . }}-test-connection"
+  name: {{ .Release.Name }}-test-connection
   labels:
-    {{- include "app-sample.labels" . | nindent 4 }}
+    app.kubernetes.io/name: {{ .Chart.Name }}
   annotations:
     "helm.sh/hook": test
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "app-sample.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ .Release.Name }}:{{ .Values.service.port }}']
   restartPolicy: Never
