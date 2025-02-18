@@ -4,6 +4,7 @@ metadata:
   name: {{ .Release.Name }}
   labels:
     app.kubernetes.io/name: {{ .Chart.Name }}
+    platform: backstage
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -13,3 +14,4 @@ spec:
       name: http
   selector:
     app.kubernetes.io/name: {{ .Chart.Name }}
+    platform: backstage
