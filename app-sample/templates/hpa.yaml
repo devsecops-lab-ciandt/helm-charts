@@ -6,6 +6,9 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ .Chart.Name }}
     platform: backstage
+    {{- with .Values.appLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

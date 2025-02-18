@@ -5,6 +5,9 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ .Chart.Name }}
     platform: backstage
+    {{- with .Values.appLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -15,3 +18,6 @@ spec:
   selector:
     app.kubernetes.io/name: {{ .Chart.Name }}
     platform: backstage
+    {{- with .Values.appLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
